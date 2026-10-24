@@ -1,0 +1,402 @@
+# The Physical AI Collection — data file. Licence: CC BY 4.0 (LICENSE).
+# One entry per project. Every entry was opened and checked on the date in `verified`.
+# Rules (README "Rules"): company-owned projects carry facts only (`reading: null`);
+# a reading — becoming or returning, with a dated one-line reason — is given only to
+# community, academic, foundation and public-research projects. No tickers, no company commentary.
+
+readings:
+  becoming: Extends what the physical body of intelligence can do — more compute, more power, more machines.
+  returning: Removes a necessity — efficiency, measurement of waste, or a once-scarce input made common.
+
+entries:
+  # ── Compute ───────────────────────────────────────────────────────────────
+  - name: OpenROAD
+    layer: compute
+    kind: repository
+    url: https://github.com/The-OpenROAD-Project/OpenROAD
+    owner: The OpenROAD Project, led by UC San Diego with university and industry partners
+    owner_type: academic
+    licence: BSD-3-Clause
+    does: Automates digital chip layout from register-transfer-level design to GDSII.
+    reading: returning
+    reason: Removes the need for a licensed design flow to take a chip to layout.
+    verified: 2026-10-23
+    basis: project documentation (repository page not reachable from the checker)
+  - name: Chipyard
+    layer: compute
+    kind: repository
+    url: https://github.com/ucb-bar/chipyard
+    owner: Berkeley Architecture Research, University of California, Berkeley
+    owner_type: academic
+    licence: BSD-3-Clause
+    does: Framework for designing, simulating and implementing custom RISC-V systems-on-chip.
+    reading: becoming
+    reason: Lets small teams build custom accelerators, extending who can make silicon.
+    verified: 2026-10-23
+    basis: repository README; licence as detected by GitHub
+  - name: Apache TVM
+    layer: compute
+    kind: repository
+    url: https://github.com/apache/tvm
+    owner: Apache Software Foundation
+    owner_type: foundation
+    licence: Apache-2.0
+    does: Machine-learning compiler that deploys models across many hardware targets.
+    reading: returning
+    reason: Compiles once for many targets, reducing dependence on any single accelerator stack.
+    verified: 2026-10-23
+    basis: repository page
+  - name: Triton
+    layer: compute
+    kind: repository
+    url: https://github.com/triton-lang/triton
+    owner: triton-lang organisation; copyright names Philippe Tillet and a private AI company
+    owner_type: company
+    licence: MIT
+    does: Language and compiler for writing efficient custom deep-learning kernels.
+    reading: null
+    reason: null
+    verified: 2026-10-23
+    basis: repository page; copyright line from Debian packaging
+
+  # ── Memory ────────────────────────────────────────────────────────────────
+  - name: gem5
+    layer: memory
+    kind: repository
+    url: https://github.com/gem5/gem5
+    owner: The gem5 project (multi-institution, own governance)
+    owner_type: community
+    licence: BSD-3-Clause
+    does: Modular simulator of processors, memory systems and full computer systems.
+    reading: becoming
+    reason: Lets new memory and processor designs be explored before any silicon exists.
+    verified: 2026-10-23
+    basis: project site; licence from GitHub metadata
+  - name: Ramulator 2
+    layer: memory
+    kind: repository
+    url: https://github.com/CMU-SAFARI/ramulator2
+    owner: SAFARI Research Group
+    owner_type: academic
+    licence: MIT
+    does: Cycle-accurate DRAM simulator for memory controllers and new DRAM standards.
+    reading: becoming
+    reason: Tests the memory layer that most often limits AI systems, before it is built.
+    verified: 2026-10-23
+    basis: repository page
+
+  # ── Advanced packaging and foundry ────────────────────────────────────────
+  - name: SkyWater SKY130 Open Source PDK
+    layer: packaging
+    kind: repository
+    url: https://github.com/google/skywater-pdk
+    owner: Collaboration between a listed technology group and a foundry
+    owner_type: company
+    licence: Apache-2.0
+    does: Open process design kit for a 130 nm process — design rules, device models, libraries.
+    reading: null
+    reason: null
+    verified: 2026-10-23
+    basis: repository README mirror
+  - name: IHP Open PDK
+    layer: packaging
+    kind: repository
+    url: https://github.com/IHP-GmbH/IHP-Open-PDK
+    owner: IHP GmbH, a publicly funded German research institute
+    owner_type: public-research
+    licence: Apache-2.0
+    does: Open process design kit for IHP's 130 nm SiGe BiCMOS technology (labelled preview).
+    reading: returning
+    reason: Opens a foundry process to anyone, removing the scarcity of access for research designs.
+    verified: 2026-10-23
+    basis: repository page
+
+  # ── Data centres ──────────────────────────────────────────────────────────
+  - name: CodeCarbon
+    layer: data-centres
+    kind: repository
+    url: https://github.com/mlco2/codecarbon
+    owner: Code Carbon, a French non-profit
+    owner_type: foundation
+    licence: MIT
+    does: Estimates the emissions of computing from measured CPU, GPU and RAM power and grid intensity.
+    reading: returning
+    reason: Makes the energy cost of each workload visible, the first step to removing it.
+    verified: 2026-10-23
+    basis: project site (repository page not reachable from the checker)
+  - name: Kepler
+    layer: data-centres
+    kind: repository
+    url: https://github.com/sustainable-computing-io/kepler
+    owner: Sustainable Computing, a Cloud Native Computing Foundation sandbox project
+    owner_type: foundation
+    licence: Apache-2.0
+    does: Measures energy use of Kubernetes containers, pods and nodes.
+    reading: returning
+    reason: Meters energy per container, so waste in shared clusters can be found and cut.
+    verified: 2026-10-23
+    basis: CNCF listing and repository mirror
+  - name: Scaphandre
+    layer: data-centres
+    kind: repository
+    url: https://github.com/hubblo-org/scaphandre
+    owner: hubblo-org
+    owner_type: community
+    licence: Apache-2.0
+    does: Agent measuring power use of hosts, virtual machines and Kubernetes workloads.
+    reading: returning
+    reason: Turns power into a monitored metric, so idle capacity stops hiding.
+    verified: 2026-10-23
+    basis: repository page
+  - name: Zeus
+    layer: data-centres
+    kind: repository
+    url: https://github.com/ml-energy/zeus
+    owner: The ML.ENERGY Initiative (academic)
+    owner_type: academic
+    licence: Apache-2.0
+    does: Measures and optimises the energy consumption of deep-learning workloads.
+    reading: returning
+    reason: Cuts the energy of training and inference without new hardware.
+    verified: 2026-10-23
+    basis: repository page
+
+  # ── Power generation ──────────────────────────────────────────────────────
+  - name: PyPSA
+    layer: generation
+    kind: repository
+    url: https://github.com/PyPSA/PyPSA
+    owner: PyPSA; maintenance led by TU Berlin
+    owner_type: academic
+    licence: MIT
+    does: Python framework for simulating and optimising power and energy systems.
+    reading: becoming
+    reason: Plans the generation and storage that new load requires.
+    verified: 2026-10-23
+    basis: repository page
+  - name: pvlib python
+    layer: generation
+    kind: repository
+    url: https://github.com/pvlib/pvlib-python
+    owner: pvlib community
+    owner_type: community
+    licence: BSD-3-Clause
+    does: Functions and classes for simulating the performance of photovoltaic systems.
+    reading: becoming
+    reason: Models the output of new solar generation for planning and operation.
+    verified: 2026-10-23
+    basis: project documentation
+
+  # ── Transmission and grid ─────────────────────────────────────────────────
+  - name: pandapower
+    layer: grid
+    kind: repository
+    url: https://github.com/e2nIEE/pandapower
+    owner: University of Kassel and Fraunhofer IEE
+    owner_type: academic
+    licence: BSD-3-Clause
+    does: Automated power-flow and optimisation studies of electric grids.
+    reading: becoming
+    reason: Tests whether a grid can absorb new load before it is connected.
+    verified: 2026-10-23
+    basis: project documentation
+  - name: PowerModels.jl
+    layer: grid
+    kind: repository
+    url: https://github.com/lanl-ansi/PowerModels.jl
+    owner: Advanced Network Science Initiative, Los Alamos National Laboratory
+    owner_type: public-research
+    licence: BSD-3-Clause
+    does: Julia package for steady-state power-network optimisation across formulations.
+    reading: becoming
+    reason: Gives planners comparable models of how far a network can be pushed.
+    verified: 2026-10-23
+    basis: repository README via mirror; GitHub detects "Other"
+  - name: Grid2Op
+    layer: grid
+    kind: repository
+    url: https://github.com/Grid2op/grid2op
+    owner: Grid2op, an LF Energy project originally developed by the French transmission operator
+    owner_type: foundation
+    licence: MPL-2.0
+    does: Testbed for reinforcement-learning agents that operate power grids.
+    reading: becoming
+    reason: Intelligence learning to run its own body — agents operating the grid.
+    verified: 2026-10-23
+    basis: organisation page
+  - name: VeraGrid (formerly GridCal)
+    layer: grid
+    kind: repository
+    url: https://github.com/SanPen/VeraGrid
+    owner: Santiago Peñate Vera and contributors
+    owner_type: community
+    licence: MPL-2.0
+    does: Power-system planning and simulation, as a library or desktop application.
+    reading: becoming
+    reason: Open planning software for the grid build-out.
+    verified: 2026-10-23
+    basis: Zenodo record
+
+  # ── Cooling ───────────────────────────────────────────────────────────────
+  - name: OpenFOAM
+    layer: cooling
+    kind: repository
+    url: https://github.com/OpenFOAM/OpenFOAM-dev
+    owner: The OpenFOAM Foundation
+    owner_type: foundation
+    licence: GPL-3.0
+    does: Computational fluid dynamics toolbox, including conjugate heat transfer solvers.
+    reading: becoming
+    reason: Designs the airflow and liquid loops that let compute run denser.
+    verified: 2026-10-23
+    basis: foundation site
+  - name: Modelica Buildings Library
+    layer: cooling
+    kind: repository
+    url: https://github.com/lbl-srg/modelica-buildings
+    owner: Lawrence Berkeley National Laboratory
+    owner_type: public-research
+    licence: BSD-3-Clause
+    does: Models of HVAC, district energy and data-centre cooling for design and control.
+    reading: returning
+    reason: Tunes cooling controls so the same work needs less energy.
+    verified: 2026-10-23
+    basis: project site; LBNL 3-clause BSD variant
+  - name: 3D-ICE
+    layer: cooling
+    kind: repository
+    url: https://github.com/esl-epfl/3d-ice
+    owner: Embedded Systems Laboratory, EPFL
+    owner_type: academic
+    licence: GPL-3.0-or-later
+    does: Thermal simulation of 3D-stacked chips with liquid microchannel cooling.
+    reading: becoming
+    reason: Cools inside the chip stack — a condition for denser compute.
+    verified: 2026-10-23
+    basis: repository page
+
+  # ── Power electronics ─────────────────────────────────────────────────────
+  - name: ngspice
+    layer: power-electronics
+    kind: repository
+    url: https://ngspice.sourceforge.io/
+    owner: The ngspice team
+    owner_type: community
+    licence: BSD-3-Clause
+    does: Mixed-signal circuit simulator with power-transistor models including self-heating.
+    reading: becoming
+    reason: Simulates the converters that move power into machines.
+    verified: 2026-10-23
+    basis: project site; licence per reference sources (some parts may differ)
+  - name: gym-electric-motor
+    layer: power-electronics
+    kind: repository
+    url: https://github.com/upb-lea/gym-electric-motor
+    owner: Paderborn University, Power Electronics and Electrical Drives
+    owner_type: academic
+    licence: MIT
+    does: Simulated electric motors and converters for classical and reinforcement-learning control.
+    reading: becoming
+    reason: Trains the control of drives — the muscles of embodiment.
+    verified: 2026-10-23
+    basis: PyPI page
+  - name: FEM Magnetics Toolbox
+    layer: power-electronics
+    kind: repository
+    url: https://github.com/upb-lea/FEM_Magnetics_Toolbox
+    owner: Paderborn University, Power Electronics and Electrical Drives
+    owner_type: academic
+    licence: GPL-3.0
+    does: Sets up finite-element simulations of magnetic components for power electronics.
+    reading: returning
+    reason: Replaces prototype iterations with simulation.
+    verified: 2026-10-23
+    basis: repository page
+
+  # ── Robotics and actuators ────────────────────────────────────────────────
+  - name: MuJoCo
+    layer: robotics
+    kind: repository
+    url: https://github.com/google-deepmind/mujoco
+    owner: Research lab of a listed technology group
+    owner_type: company
+    licence: Apache-2.0
+    does: Physics engine for multi-joint dynamics with contact, used in robotics research.
+    reading: null
+    reason: null
+    verified: 2026-10-23
+    basis: repository page
+  - name: Isaac Lab
+    layer: robotics
+    kind: repository
+    url: https://github.com/isaac-sim/IsaacLab
+    owner: The Isaac Lab Project Developers, built on a listed company's simulator
+    owner_type: company
+    licence: BSD-3-Clause
+    does: Unified robot-learning framework built on the Isaac Sim simulator.
+    reading: null
+    reason: null
+    verified: 2026-10-23
+    basis: project documentation
+  - name: LeRobot
+    layer: robotics
+    kind: repository
+    url: https://github.com/huggingface/lerobot
+    owner: LeRobot team at a private AI company
+    owner_type: company
+    licence: Apache-2.0
+    does: PyTorch models, datasets and tools for real-world robot learning.
+    reading: null
+    reason: null
+    verified: 2026-10-23
+    basis: PyPI page
+  - name: Open X-Embodiment
+    layer: robotics
+    kind: dataset
+    url: https://github.com/google-deepmind/open_x_embodiment
+    owner: Research lab of a listed technology group, with partner institutions
+    owner_type: company
+    licence: Apache-2.0 (code); CC-BY-4.0 (other materials)
+    does: Open robot-learning datasets converted into one unified episode format.
+    reading: null
+    reason: null
+    verified: 2026-10-23
+    basis: repository page
+
+  # ── Sensors and machine vision ────────────────────────────────────────────
+  - name: OpenCV
+    layer: sensing
+    kind: repository
+    url: https://github.com/opencv/opencv
+    owner: Open Source Vision Foundation
+    owner_type: foundation
+    licence: Apache-2.0
+    does: Library of image-processing and computer-vision algorithms.
+    reading: returning
+    reason: Made machine vision a common library; the algorithm is no longer the scarce input.
+    verified: 2026-10-23
+    basis: project licence page
+  - name: Open3D
+    layer: sensing
+    kind: repository
+    url: https://github.com/isl-org/Open3D
+    owner: Open3D Team (contact address at a listed company)
+    owner_type: company
+    licence: MIT
+    does: C++ and Python library for processing 3D data.
+    reading: null
+    reason: null
+    verified: 2026-10-23
+    basis: PyPI page; GitHub detects "Other"
+  - name: Point Cloud Library
+    layer: sensing
+    kind: repository
+    url: https://github.com/PointCloudLibrary/pcl
+    owner: PointCloudLibrary maintainers
+    owner_type: community
+    licence: BSD-3-Clause
+    does: C++ algorithms for processing 3D point clouds.
+    reading: becoming
+    reason: Gives machines depth perception from lidar and depth sensors.
+    verified: 2026-10-23
+    basis: releases page; licence per package metadata

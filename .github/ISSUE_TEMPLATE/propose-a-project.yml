@@ -1,0 +1,51 @@
+name: Propose a project
+description: Suggest an open-source project for the Physical AI Collection.
+title: "Propose: <project name>"
+labels: [proposal]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Repository or project URL
+      placeholder: https://github.com/...
+    validations:
+      required: true
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Layer
+      options:
+        - Accelerated compute
+        - High-bandwidth memory
+        - Advanced packaging and foundry
+        - Data centres
+        - Power generation
+        - Transmission and grid
+        - Cooling
+        - Power electronics
+        - Robotics and actuators
+        - Sensors and machine vision
+    validations:
+      required: true
+  - type: input
+    id: licence
+    attributes:
+      label: Licence (SPDX identifier)
+      placeholder: Apache-2.0
+    validations:
+      required: true
+  - type: textarea
+    id: does
+    attributes:
+      label: What it does, in one sentence
+    validations:
+      required: true
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Rules
+      options:
+        - label: The project is active (activity within the last two years) and has an open-source licence.
+          required: true
+        - label: This proposal contains no view on any company or security.
+          required: true
